@@ -1,0 +1,66 @@
+/* components/FreeDeclaration/FreeDeclaration.module.css */
+.container {
+    padding: 3rem;
+}
+.section {
+    margin-top: 4rem;
+    padding: 3rem;
+    border-top: 1px solid var(--primary-blue);
+
+}
+.free {
+    justify-content: space-between;
+    align-items: flex-start;
+    display: flex;
+}
+
+.text {
+    color: var(--primary-black);
+    max-width: 16.5625rem;
+    font-size: .9375rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+.title {
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    font-size: 12rem;
+    font-weight: 600;
+    line-height: 8.875rem;
+    font-family: var(--font-bebas);
+}
+
+.btn {
+    width: 100%;
+    max-width: 66.57%;
+    margin-top: 6rem;
+    background: var(--primary-blue);
+    border-radius: .5rem;
+    height: 4rem;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+}
+
+.btnText {
+    letter-spacing: .02rem;
+    color: inherit;
+    font-size: .8125rem;
+    line-height: 1.125rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.circle {
+    transition: color .36s, background-color .36s, border-color .36s;
+    background-color: var(--primary-white);
+    color: var(--primary-black);
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    transition: background-color .26s;
+    display: inline-flex;
+}

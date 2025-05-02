@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 60px;
+    color: #000;
+    margin-bottom: 22px;
+}
+
+.brandText {
+    color: #0000FB;
+}
+
+.description {
+    text-align: center;
+    font-size: 36px;
+    color: #000;
+    font-weight: 100;
+}
+
+.brandsContainer {
+    display: flex;
+    align-items: center;
+}
+
+.transitionLogo {
+    margin: 106px 100px 100px 50px;
+}
+
+.submitButton {
+    all: unset;
+    text-align: center;
+    width: 292px;
+    padding: 0.75rem;
+    background-color: #AD2227;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.submitButton:hover {
+    transform: scale(1.1)
+}

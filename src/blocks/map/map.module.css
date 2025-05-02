@@ -1,0 +1,11 @@
+/* components/MapMoscow.module.css */
+
+.mapWrapper {
+    width: 100vw;                           /* на всю ширину окна */
+    margin-left: calc(-50vw + 50%);         /* компенсируем контейнерную центровку */
+}
+
+.map {
+    width: 100%;
+    height: 400px;                          /* можно изменить под дизайн */
+}

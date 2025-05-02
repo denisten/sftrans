@@ -1,0 +1,50 @@
+.container {
+    z-index: 2;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.title {
+    letter-spacing: .02rem;
+    max-width: 55.75rem;
+    font-size: 2.625rem;
+    font-weight: 500;
+    line-height: 2.325rem;
+    color: var(--primary-black);
+}
+
+.amount {
+    border-top: 1px solid var(--primary-blue);
+    justify-content: space-between;
+    width: 35rem;
+    margin-top: 6rem;
+    margin-left: auto;
+    padding-top: 1.5rem;
+    color: var(--primary-black);
+    display: flex;
+}
+
+.numbersContainer {
+    align-items: flex-start;
+    gap: .25rem;
+    display: flex;
+
+}
+
+.number {
+    font-size: 6rem;
+    line-height: 4.375rem;
+}
+
+.plus {
+    font-size: 2.625rem;
+    line-height: 1.125rem;
+}
+
+.description {
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
+    max-width: 15.125rem;
+}

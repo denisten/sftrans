@@ -1,0 +1,99 @@
+.wrapper {
+    text-align: center;
+    background: #fff;
+}
+
+.header {
+    font-size: 2rem;
+    font-weight: 700;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    line-height: 1.2;
+    color: #000;
+}
+
+.highlight {
+    color: #4c1dff;
+}
+
+.list {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Карточка */
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    border-radius: 16px;
+    min-width: 140px;
+    flex: 0.8;
+    box-sizing: border-box;
+}
+
+/* Варианты фона */
+.dark {
+    background: #050556;
+    color: #fff;
+}
+
+.blue {
+    background: #1111C3;
+    color: #fff;
+}
+
+.bright {
+    background: #2E46FF;
+    color: #fff;
+}
+
+/* Увеличенные карточки */
+.large {
+    flex: 1.2;
+}
+
+/* Заголовок карточки */
+.title {
+    margin: 0 0 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Описание */
+.desc {
+    margin-top: 1rem;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Подпись для центрального */
+.label {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.tall {
+  min-height: 300px;
+}
+
+.medium {
+  min-height: 240px;
+}
+
+.small {
+  min-height: 180px;
+}
+
+
+
+
+
+

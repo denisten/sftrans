@@ -1,0 +1,56 @@
+.header {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 70px;
+}
+
+.container {
+  /*width: 100%;*/
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: block;
+  width: auto; /* убираем жёсткую ширину */
+  /*max-width: 100%;   !* не больше контейнера *!*/
+  height: 50px; /* сохраняем пропорции */
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.nav button, .container button {
+  /*margin-left: 1rem;*/
+  /*text-decoration: none;*/
+  /*color: #333;*/
+  /*font-size: 24px;*/
+  /*font-weight: 400;*/
+  all: unset;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav button:hover {
+  color: #0070f3;
+}
