@@ -1,5 +1,7 @@
-import Link from 'next/link';
+'use client';
+
 import styles from './delivery-types.module.css';
+import { useScrollTo } from '@/hooks/use-scroll-to';
 
 const deliveries = [
   { id: 1, title: 'Авиа', days: 'от 1 до 3 дней' },
@@ -12,7 +14,10 @@ export default function DeliveryTypes() {
   // разбиваем на два ряда
   const firstRow = deliveries.slice(0, 2);
   const secondRow = deliveries.slice(2, 4);
-
+  const scrollTo = useScrollTo();
+  const handleScroll = e => {
+    scrollTo('form');
+  };
   return (
     <section className={styles.wrapper} id="delivery">
       <h2 className={styles.title}>Виды доставки</h2>
@@ -27,7 +32,9 @@ export default function DeliveryTypes() {
             >
               <span className={styles.label}>{item.days}</span>
               <h3 className={styles.cardTitle}>{item.title}</h3>
-              <button className={styles.button}>Узнать</button>
+              <button className={styles.button} onClick={handleScroll}>
+                Узнать
+              </button>
             </div>
           );
         })}
@@ -43,7 +50,9 @@ export default function DeliveryTypes() {
             >
               <span className={styles.label}>{item.days}</span>
               <h3 className={styles.cardTitle}>{item.title}</h3>
-              <button className={styles.button}>Узнать</button>
+              <button className={styles.button} onClick={handleScroll}>
+                Узнать
+              </button>
             </div>
           );
         })}

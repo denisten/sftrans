@@ -118,7 +118,6 @@
     box-shadow: 0 0 0 3px rgba(76, 29, 255, 0.5);
 }
 
-/* Предполагается, что вы добавите .success и .error, например: */
 .success {
     color: green;
     text-align: center;
@@ -127,4 +126,71 @@
 .error {
     color: red;
     text-align: center;
+}
+
+/* —————— АДАПТИВ —————— */
+
+/* Планшеты и большие телефоны */
+@media (max-width: 768px) {
+    .wrapper {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    .step {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .stepLabel {
+        width: auto;
+    }
+
+    .fieldsRow {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .input {
+        min-width: auto;
+    }
+
+    .textarea {
+        min-height: 120px;
+    }
+
+    .submitButton {
+        padding: 0.65rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* Узкие телефоны */
+@media (max-width: 480px) {
+    .wrapper {
+        padding: 1rem;
+    }
+
+    .title {
+        font-size: 1.25rem;
+    }
+
+    .stepNumber {
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .stepLabel {
+        font-size: 0.9rem;
+    }
+
+    .input, .textarea {
+        font-size: 0.95rem;
+        padding: 0.5rem;
+    }
+
+    .submitButton {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
 }

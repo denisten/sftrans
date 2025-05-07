@@ -1,9 +1,16 @@
-// components/Footer/Footer.jsx
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './footer.module.css';
+import { useScrollTo } from '@/hooks/use-scroll-to';
 
 export default function Footer() {
+  const scrollTo = useScrollTo();
+
+  const handleScroll = id => {
+    return () => scrollTo(id);
+  };
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -26,18 +33,31 @@ export default function Footer() {
         <div className={styles.nav}>
           <ul className={styles.navColumn}>
             <li>
-              <Link href="/">Главная</Link>
+              <button onClick={handleScroll('hero')}>Главная</button>
             </li>
             <li>
-              <Link href="/about">О компании</Link>
+              <button onClick={handleScroll('form')}>Заявка</button>
             </li>
           </ul>
           <ul className={styles.navColumn}>
             <li>
-              <Link href="/pricing">Стоимость</Link>
+              <button onClick={handleScroll('timetransit')}>timetransit</button>
             </li>
             <li>
-              <Link href="/delivery-types">Виды доставки</Link>
+              <button onClick={handleScroll('services')}>Услуги</button>
+            </li>
+          </ul>
+          <ul className={styles.navColumn}>
+            <li>
+              <button onClick={handleScroll('delivery')}>Виды доставки</button>
+            </li>
+            <li>
+              <button onClick={handleScroll('advantages')}>Преимущества</button>
+            </li>
+          </ul>
+          <ul className={styles.navColumn}>
+            <li>
+              <button onClick={handleScroll('contacts')}>Контакты</button>
             </li>
           </ul>
         </div>

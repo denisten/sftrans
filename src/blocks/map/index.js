@@ -4,6 +4,8 @@
 import { useEffect } from 'react';
 import styles from './map.module.css';
 
+const officeCoords = [55.655803, 37.498249];
+
 export default function Map() {
   useEffect(() => {
     // динамически добавляем скрипт Яндекс.Карт
@@ -16,8 +18,8 @@ export default function Map() {
       // ждём готовности API
       ymaps.ready(() => {
         const map = new ymaps.Map('yandex-map', {
-          center: [55.7558, 37.6173],
-          zoom: 10,
+          center: officeCoords,
+          zoom: 16,
           controls: [], // убираем все контролы
         });
 
@@ -28,7 +30,7 @@ export default function Map() {
         ]);
         // добавляем маркер
         const placemark = new ymaps.Placemark(
-          [55.7558, 37.6173],
+          officeCoords,
           {}, // без свойств
           {
             // опции: стандартный красный маркер

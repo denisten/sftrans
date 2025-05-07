@@ -43,6 +43,21 @@
     align-items: center;
     justify-content: space-between;
     border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background: var(--primary-white);
+    border: 1px solid var(--primary-black);
+
+    .btnText {
+        color: var(--primary-blue);
+    }
+
+    .circle {
+        background-color: var(--primary-blue);
+    }
 }
 
 .btnText {

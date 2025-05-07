@@ -44,13 +44,15 @@
     flex-direction: column;
     gap: 0.75rem;
 }
-.navColumn a {
+.navColumn button {
+    all: unset;
     color: #000;
     text-decoration: none;
     font-weight: 400;
+    cursor: pointer;
 }
-.navColumn a:hover {
-    text-decoration: underline;
+.navColumn button:hover {
+    /*text-decoration: underline;*/
 }
 
 /* Правая колонка */

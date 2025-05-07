@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    container_name: nextjs-app
+    expose:
+      - "3000"  # внутренний порт, доступен в сети
+    networks:
+      - web_net
+
+  nginx:
+    image: nginx:stable-alpine
+    container_name: nginx-reverse-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+    networks:
+      - web_net
+
+networks:
+  web_net:
+    driver: bridge

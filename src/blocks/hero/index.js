@@ -1,8 +1,8 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import styles from './hero.module.css';
+'use client';
 import Slider from '@/components/slider';
-import { Content } from '@/components/slider/content';
+import { DesktopContent } from './desktop-content';
+import { useIsMobile } from '@/hooks/use-is-mobile';
+import MobileContent from '@/blocks/hero/mobile-content';
 
 const data = [
   {
@@ -20,9 +20,14 @@ const data = [
 ];
 
 export default function Hero() {
+  const isMobile = useIsMobile();
   return (
     <section id="hero" className="fullWidth">
-      <Slider autoplay={false} data={data} Content={Content} />
+      <Slider
+        autoplay={false}
+        data={data}
+        Content={isMobile ? MobileContent : DesktopContent}
+      />
     </section>
   );
 }

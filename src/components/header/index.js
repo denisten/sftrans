@@ -1,5 +1,6 @@
 'use client';
-import Link from 'next/link';
+
+import { useState } from 'react';
 import Image from 'next/image';
 import styles from './header.module.css';
 import { useHideOnScroll } from '@/hooks/use-hide-on-scroll';
@@ -8,10 +9,13 @@ import { useScrollTo } from '@/hooks/use-scroll-to';
 export default function Header() {
   const visible = useHideOnScroll();
   const scrollTo = useScrollTo();
+  const [open, setOpen] = useState(false);
 
-  const handleScroll = id => {
-    return () => scrollTo(id);
+  const handleScroll = id => () => {
+    setOpen(false);
+    scrollTo(id);
   };
+
   return (
     <header
       className={styles.header}
@@ -21,17 +25,31 @@ export default function Header() {
       }}
     >
       <div className={styles.container}>
-        <button onClick={handleScroll('hero')}>
+        {/* Логотип */}
+        <button onClick={handleScroll('hero')} className={styles.logoBtn}>
           <Image
             src="/logo.png"
-            className={styles.logo}
             alt="logo"
             priority
             width={180}
             height={80}
+            className={styles.logo}
           />
         </button>
-        <nav className={styles.nav}>
+
+        {/* Кнопка-гамбургер */}
+        <button
+          className={styles.burger}
+          onClick={() => setOpen(o => !o)}
+          aria-label="Toggle menu"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+
+        {/* Навигация */}
+        <nav className={`${styles.nav} ${open ? styles.open : ''}`}>
           <button onClick={handleScroll('hero')}>Главная</button>
           <button onClick={handleScroll('form')}>Заявка</button>
           <button onClick={handleScroll('timetransit')}>timetransit</button>

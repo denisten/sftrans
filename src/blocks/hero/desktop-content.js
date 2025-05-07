@@ -1,22 +1,12 @@
 'use client';
-import { useEffect } from 'react';
+
 import Image from 'next/image';
-import style from './slider.module.css';
+import style from './hero.module.css';
 import Button from '@/components/button';
 
-export const Content = ({ item }) => {
+export const DesktopContent = ({ item }) => {
   const { src, text } = item;
-  const isMobile = false;
-  // const isMobile = window.innerWidth < 600;
 
-  useEffect(() => {
-    if (!isMobile) {
-      setTimeout(() => {
-        const video = document.getElementById('hero-video');
-        video?.load();
-      }, 3000);
-    }
-  }, [isMobile]);
   return (
     <div
       style={{

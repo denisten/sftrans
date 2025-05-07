@@ -117,3 +117,27 @@
 .lineRight {
     background: #4c1dff;
 }
+
+@media (max-width: 480px) {
+    .timeline {
+        padding: 0;
+
+    }
+
+    .timelineItem {
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    .left, .right {
+        left: 0;
+    }
+
+    .leftBox {
+        padding: 1rem 2rem 1rem 3rem;
+    }
+
+    .rightBox {
+        padding: 1rem 3rem 1rem 2rem;
+    }
+}

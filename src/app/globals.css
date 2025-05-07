@@ -8,6 +8,8 @@
   --primary-white: #ffffff;
   --section-padding-vertical: 3rem;
   --section-padding-horizontal: 3rem;
+  --section-mobile-padding-vertical: 2rem;
+  --section-mobile-padding-horizontal: 1rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -64,5 +66,12 @@ section {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: var(--section-mobile-padding-vertical)
+    var(--section-mobile-padding-horizontal);
   }
 }

@@ -1,0 +1,38 @@
+@keyframes moveToLeft {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.container {
+    margin-top: 3rem;
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.row {
+    border-top: 1px solid var(--primary-blue);
+    justify-content: flex-start;
+    align-items: center;
+    display: inline-flex;
+}
+
+.partnersContainer {
+    flex-wrap: nowrap;
+    align-items: center;
+    animation: moveToLeft 35s linear infinite;
+    display: flex;
+}
+
+.image {
+    border-right: 1px solid var(--primary-blue);
+    width: 20vw;
+    height: auto;
+    max-height: 12.5rem;
+}

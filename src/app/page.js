@@ -12,6 +12,7 @@ import FreeDeclaration from '@/blocks/free-declaration';
 import OurClients from '@/blocks/our-clients';
 import Map from '@/blocks/map';
 import Footer from '@/blocks/footer';
+import Partners from '@/blocks/partners';
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
       <SectionAdvantages />
       <FreeDeclaration />
       <OurClients />
+      {/*<Partners />*/}
       <Map />
       <Footer />
     </div>

@@ -23,6 +23,7 @@
   );
   pointer-events: none;
 }
+
 .container {
   display: flex;
   justify-content: space-between;
@@ -68,4 +69,9 @@
   height: auto;     /* высота подстраивается пропорционально */
   object-fit: cover; /* обрезает лишнее, сохраняя соотношение сторон */
   object-position: right center; /* точка фокусировки */
+}
+
+.mobileContainer {
+  position: absolute;
+  bottom: 0;
 }

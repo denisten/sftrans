@@ -91,4 +91,11 @@
     border-radius: 6px;
     z-index: 1;
     text-align: center;
+    cursor: pointer;
+}
+
+@media (max-width: 480px) {
+    .row {
+        gap: 1rem;
+    }
 }

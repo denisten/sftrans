@@ -5,7 +5,7 @@
 }
 
 .title {
-    font-size: 60px;
+    font-size: 4rem;
     color: #000;
     margin-bottom: 22px;
 }
@@ -47,4 +47,23 @@
 
 .submitButton:hover {
     transform: scale(1.1)
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+
+    .transitionLogo {
+        margin: 40px 26px 30px 16px;
+    }
+
+    .submitButton {
+        width: 120px;
+    }
 }
