@@ -7,7 +7,7 @@ export default function AdvantagesMobile() {
     <section className={styles.section} id="advantages">
       <div className={styles.left}>
         <div className={styles.textContainer}>
-          <p className={styles.count}>5 ПРИЧИН</p>
+          <p className={styles.count}>6 ПРИЧИН</p>
           <h2 className={styles.heading}>
             Доверить свой груз <br />
             SAFETRANS INTERNATIONAL

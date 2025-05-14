@@ -79,8 +79,7 @@ export default function Footer() {
         <div className={styles.right}>
           <button className={styles.cta}>Узнать цену</button>
           <div className={styles.emails}>
-            <Link href="mailto:m.st@sftrans.com">m.st@sftrans.com</Link>
-            <Link href="mailto:info.st@sftrans.ru">info.st@sftrans.ru</Link>
+            <Link href="mailto:info@timetransit.ru">info@timetransit.ru</Link>
           </div>
           <a href="tel:+74959692990" className={styles.phone}>
             +7 495 969 29 90
@@ -107,12 +106,12 @@ export default function Footer() {
                 , <a href="tel:+79165615626">+7 916 561-56-26</a>
               </div>
               <div>
-                <strong>Настя (China Pay):</strong>{' '}
+                <strong>Анастасия (China Pay):</strong>{' '}
                 <a href="mailto:xiya.j@timetransit.ru">xiya.j@timetransit.ru</a>
                 , <a href="tel:+79680832429">+7 968 083-24-29</a>
               </div>
               <div>
-                <strong>Юрий (переоформление):</strong>{' '}
+                <strong>Юрий (транзитное переоформление):</strong>{' '}
                 <a href="mailto:tsoy.y@timetransit.ru">tsoy.y@timetransit.ru</a>
                 , <a href="tel:+79990002990">+7 999 000-29-90</a>
               </div>

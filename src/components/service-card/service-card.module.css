@@ -22,7 +22,7 @@
     align-items: center;
     gap: 1rem;
     color: #fff;
-    clip-path: polygon(10% 0, 90% 0, 97% 50%, 90% 100%, 10% 99%, 4% 50%);
+    /*clip-path: polygon(10% 0, 90% 0, 97% 50%, 90% 100%, 10% 99%, 4% 50%);*/
 }
 
 

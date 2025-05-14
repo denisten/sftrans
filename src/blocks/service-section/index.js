@@ -2,11 +2,7 @@
 
 import Image from 'next/image';
 import styles from './service-section.module.css';
-import { motion } from 'framer-motion';
-import { useClosestCardId } from '@/hooks/use-closest-card-id';
-import { useIsMobile } from '@/hooks/use-is-mobile';
-import ServiceCard from '@/components/service-card';
-import ServiceCardMobile from '@/components/service-card/service-card-mobile';
+import cn from 'classnames';
 
 const services = [
   {
@@ -30,7 +26,7 @@ const services = [
     title: 'Транзитное переоформление',
     description:
       'Приобретение товаров из 3-х стран с официальной возможностью ввоза на территорию РФ.',
-    icon: '/icons/transit.svg',
+    icon: '/icons/arrow-left-right.svg',
     bg: '#000053',
   },
   {
@@ -38,7 +34,7 @@ const services = [
     title: 'Лизинг и кредитование',
     description:
       'Гибкие финансовые инструменты для закупок. Выкуп оборудования в рассрочку или под залог.',
-    icon: '/icons/leasing.svg',
+    icon: '/icons/credit-card.svg',
     bg: '#000070',
   },
   {
@@ -46,7 +42,7 @@ const services = [
     title: 'Платежи в КНР',
     description:
       'Мы обеспечиваем надёжные и безопасные международные расчёты. Аккредитованный участник системы China Pay.',
-    icon: '/icons/china-pay-service.svg',
+    icon: '/icons/yuan-currency.svg',
     bg: '#00009D',
   },
   {
@@ -76,48 +72,61 @@ const services = [
 ];
 
 export default function ServicesSection() {
-  const activeId = useClosestCardId();
-  const isMobile = useIsMobile();
-
   return (
     <section className={styles.servicesSection} id="services">
       <div className={styles.header}>
-        <span className={`${styles.line} ${styles.lineLeft}`} />
+        <span className={cn(styles.line, styles.lineLeft)} />
         <div className={styles.titleBox}>
           Наши <span className={styles.highlight}>услуги</span>
         </div>
-        <span className={`${styles.line} ${styles.lineRight}`} />
+        <span className={cn(styles.line, styles.lineRight)} />
       </div>
-
-      {isMobile ? (
-        <div className={styles.timeline}>
-          {services.map(svc => (
-            <ServiceCardMobile svc={svc} key={svc.id} />
-          ))}
-        </div>
-      ) : (
+      <div
+        style={{
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          maxWidth: '1200px',
+        }}
+      >
         <div className={styles.timeline}>
           {services.map((svc, i) => {
-            const isActive = String(svc.id) === activeId;
-            const activeIndex = services.findIndex(
-              s => String(s.id) === activeId
-            );
-            const isBefore = i === activeIndex - 1;
-            const isAfter = i === activeIndex + 1;
+            const isLeft = i % 2 === 0;
 
             return (
-              <ServiceCard
+              <div
                 key={svc.id}
-                svc={svc}
-                isBefore={isBefore}
-                isAfter={isAfter}
-                isLeft={i % 2 === 0}
-                isActive={isActive}
-              />
+                className={cn(
+                  styles.timelineItem,
+                  isLeft ? styles.left : styles.right
+                )}
+              >
+                <div
+                  className={cn(
+                    styles.contentBox,
+                    isLeft ? styles.leftBox : styles.rightBox,
+                    isLeft ? styles.leftLayout : styles.rightLayout
+                  )}
+                  style={{ background: svc.bg }}
+                >
+                  <div className={styles.iconBox}>
+                    <Image
+                      src={svc.icon}
+                      alt={svc.title}
+                      width={48}
+                      height={48}
+                    />
+                  </div>
+                  <div className={styles.text}>
+                    <h3 className={styles.title}>{svc.title}</h3>
+                    <p className={styles.desc}>{svc.description}</p>
+                  </div>
+                </div>
+              </div>
             );
           })}
         </div>
-      )}
+      </div>
     </section>
   );
 }

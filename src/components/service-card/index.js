@@ -9,13 +9,13 @@ export default function ServiceCard({
   isBefore,
   isAfter,
 }) {
-  const marginTop = isAfter ? 40 : '-2rem';
-  const marginBottom = isBefore ? 40 : '-2rem';
+  // const marginTop = isAfter ? 40 : '-2rem';
+  // const marginBottom = isBefore ? 40 : '-2rem';
 
   return (
     <motion.div
       data-timeline-id={svc.id}
-      style={{ marginTop, marginBottom }}
+      // style={{ marginTop, marginBottom }}
       animate={{
         scale: isActive ? 1.05 : 0.96,
         y: isActive ? -20 : 0,

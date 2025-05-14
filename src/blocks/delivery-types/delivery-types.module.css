@@ -6,12 +6,15 @@
 }
 
 .title {
-    font-size: 2rem;
+    font-size: 4rem;
     font-weight: 700;
     text-align: center;
     margin-bottom: 2rem;
 }
 
+.highlight {
+    color: var(--primary-blue);
+}
 /* Два ряда карточек */
 .row {
     display: flex;
@@ -129,9 +132,4 @@
 }
 .card:hover .bg {
     transform: scale(1.2); /* эффект приближения фона */
-}
-
-.full {
-    flex: 100%;
-    width: 100%;
 }

@@ -26,7 +26,7 @@ export default function Home() {
       <DeliveryTypes />
       <Features />
       <SectionAdvantages />
-      <FreeDeclaration />
+      {/*<FreeDeclaration />*/}
       <OurClients />
       {/*<Partners />*/}
       <Map />
