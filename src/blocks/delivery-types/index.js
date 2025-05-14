@@ -8,13 +8,20 @@ const deliveries = [
   { id: 2, title: 'Авто', days: 'от 14 до 21 дня', bg: '/auto-background.png' },
   { id: 3, title: 'ЖД', days: 'от 21 до 28 дней', bg: '/train-background.png' },
   { id: 4, title: 'Море', days: 'от 30 до 45 дней', bg: '/sea-background.png' },
+  {
+    id: 5,
+    title: 'Мультимодальные',
+    days: 'от 30 до 45 дней',
+    bg: '/multimodal-background.png',
+    isFull: true,
+  },
 ];
 
 export default function DeliveryTypes() {
   // разбиваем на два ряда
   const firstRow = deliveries.slice(0, 2);
   const secondRow = deliveries.slice(2, 4);
-
+  const thirdRow = deliveries.slice(4);
   return (
     <section className={styles.wrapper} id="delivery">
       <h2 className={styles.title}>Виды доставки</h2>
@@ -48,17 +55,37 @@ export default function DeliveryTypes() {
           );
         })}
       </div>
+      <div className={styles.row}>
+        {thirdRow.map(item => {
+          return (
+            <Plate
+              key={item.id}
+              bg={item.bg}
+              id={item.id}
+              days={item.days}
+              isLarge={false}
+              isFull={item.isFull}
+              title={item.title}
+            />
+          );
+        })}
+      </div>
     </section>
   );
 }
 
-const Plate = ({ id, days, title, isLarge, bg }) => {
+const Plate = ({ id, days, title, isLarge, bg, isFull }) => {
   const scrollTo = useScrollTo();
   const handleScroll = e => {
     scrollTo('form');
   };
   return (
-    <div key={id} className={`${styles.card} ${isLarge ? styles.large : ''}`}>
+    <div
+      key={id}
+      className={`${styles.card} ${isLarge ? styles.large : ''} ${
+        isFull ? styles.full : ''
+      }`}
+    >
       <div
         className={styles.bg}
         style={{

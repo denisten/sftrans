@@ -18,7 +18,7 @@ export default function AdvantagesDesktop() {
     <section className={styles.section} id="advantages">
       <div className={styles.left}>
         <div className={styles.textContainer}>
-          <p className={styles.count}>5 ПРИЧИН</p>
+          <p className={styles.count}>6 ПРИЧИН</p>
           <h2 className={styles.heading}>
             Доверить свой груз <br />
             SAFETRANS INTERNATIONAL
@@ -35,6 +35,7 @@ export default function AdvantagesDesktop() {
               <span>03</span>
               <span>04</span>
               <span>05</span>
+              <span>06</span>
             </div>
           </div>
         </div>
