@@ -77,7 +77,9 @@ export default function Footer() {
 
         {/* Контакты */}
         <div className={styles.right}>
-          <button className={styles.cta}>Узнать цену</button>
+          <button className={styles.cta} onClick={handleScroll('form')}>
+            Узнать цену
+          </button>
           <div className={styles.emails}>
             <Link href="mailto:info@timetransit.ru">info@timetransit.ru</Link>
           </div>
