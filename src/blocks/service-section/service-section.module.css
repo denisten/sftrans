@@ -32,25 +32,28 @@
 /* Таймлайн-контейнер */
 .timeline {
     position: relative;
-    padding: 5rem 0 0;
+    padding: 5rem 6rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Карточки */
 .timelineItem {
-    position: relative;
     width: 50%;
-    margin: -4rem 0;
+    max-width: 680px;
+    display: flex;
+    justify-content: center;
+    margin: -3rem 0;
+    will-change: transform;
     z-index: 2;
 }
 
 .left {
-    left: 0;
-    text-align: left;
+    align-self: center;
 }
 
 .right {
-    left: 50%;
-    text-align: right;
+    align-self: center;
 }
 
 /* Шестиугольник-контент */
@@ -121,7 +124,6 @@
 @media (max-width: 480px) {
     .timeline {
         padding: 0;
-
     }
 
     .timelineItem {

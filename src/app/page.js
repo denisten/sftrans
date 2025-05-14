@@ -13,6 +13,7 @@ import OurClients from '@/blocks/our-clients';
 import Map from '@/blocks/map';
 import Footer from '@/blocks/footer';
 import Partners from '@/blocks/partners';
+import AdvantagesMobile from '@/blocks/advantages/advantages-mobile';
 
 export default function Home() {
   return (

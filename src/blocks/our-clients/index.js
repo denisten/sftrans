@@ -13,7 +13,7 @@ export default function OurClients() {
           <sup className={styles.plus}>+</sup>
         </div>
         <div className={styles.description}>
-          Клиентов воспользовались услугами Transitplus с 1997 года
+          Клиентов воспользовались услугами SAFETRANS INTERNATIONAL с 1997 года
         </div>
       </div>
     </section>

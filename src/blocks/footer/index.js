@@ -4,10 +4,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from './footer.module.css';
 import { useScrollTo } from '@/hooks/use-scroll-to';
+import { useIsMobile } from '@/hooks/use-is-mobile';
 
 export default function Footer() {
   const scrollTo = useScrollTo();
-
+  const isMobile = useIsMobile();
   const handleScroll = id => {
     return () => scrollTo(id);
   };
@@ -19,8 +20,8 @@ export default function Footer() {
           <Image
             src="/logo.png"
             alt="SafeTrans International"
-            width={180}
-            height={60}
+            width={isMobile ? 100 : 180}
+            height={isMobile ? 48 : 60}
           />
           <address className={styles.address}>
             г. Москва, ул. Ленинский пр-т, д. 113/1, оф. E310
@@ -30,37 +31,45 @@ export default function Footer() {
         </div>
 
         {/* Навигация */}
-        <div className={styles.nav}>
-          <ul className={styles.navColumn}>
-            <li>
-              <button onClick={handleScroll('hero')}>Главная</button>
-            </li>
-            <li>
-              <button onClick={handleScroll('form')}>Заявка</button>
-            </li>
-          </ul>
-          <ul className={styles.navColumn}>
-            <li>
-              <button onClick={handleScroll('timetransit')}>timetransit</button>
-            </li>
-            <li>
-              <button onClick={handleScroll('services')}>Услуги</button>
-            </li>
-          </ul>
-          <ul className={styles.navColumn}>
-            <li>
-              <button onClick={handleScroll('delivery')}>Виды доставки</button>
-            </li>
-            <li>
-              <button onClick={handleScroll('advantages')}>Преимущества</button>
-            </li>
-          </ul>
-          <ul className={styles.navColumn}>
-            <li>
-              <button onClick={handleScroll('contacts')}>Контакты</button>
-            </li>
-          </ul>
-        </div>
+        {isMobile ? null : (
+          <div className={styles.nav}>
+            <ul className={styles.navColumn}>
+              <li>
+                <button onClick={handleScroll('hero')}>Главная</button>
+              </li>
+              <li>
+                <button onClick={handleScroll('form')}>Заявка</button>
+              </li>
+            </ul>
+            <ul className={styles.navColumn}>
+              <li>
+                <button onClick={handleScroll('timetransit')}>
+                  timetransit
+                </button>
+              </li>
+              <li>
+                <button onClick={handleScroll('services')}>Услуги</button>
+              </li>
+            </ul>
+            <ul className={styles.navColumn}>
+              <li>
+                <button onClick={handleScroll('delivery')}>
+                  Виды доставки
+                </button>
+              </li>
+              <li>
+                <button onClick={handleScroll('advantages')}>
+                  Преимущества
+                </button>
+              </li>
+            </ul>
+            <ul className={styles.navColumn}>
+              <li>
+                <button onClick={handleScroll('contacts')}>Контакты</button>
+              </li>
+            </ul>
+          </div>
+        )}
 
         {/* Контакты */}
         <div className={styles.right}>

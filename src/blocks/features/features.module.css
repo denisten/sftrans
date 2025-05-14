@@ -92,7 +92,40 @@
   min-height: 180px;
 }
 
+@media (max-width: 480px) {
+    .header {
+        font-size: 1.25rem;
+        padding: 0 0.5rem;
+        margin-bottom: 2rem;
+    }
 
+    .card {
+        padding: 1rem;
+        flex: 1;
+        min-height: 190px;
+        justify-content: center;
+    }
+
+    .title {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .desc {
+        font-size: 0.85rem;
+        margin-top: 0.75rem;
+    }
+
+    .label {
+        font-size: 0.9rem;
+        margin-top: 0.75rem;
+    }
+
+    .card img {
+        width: 64px;
+        height: 64px;
+    }
+}
 
 
 

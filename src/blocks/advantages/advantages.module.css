@@ -131,10 +131,40 @@
 }
 
 .year {
-
     position: absolute;
     bottom: 1.5rem;
     right: 1.5rem;
     font-size: 5rem;
     color: var(--primary-blue);
+}
+
+
+@media (max-width :480px) {
+    .section {
+        display: block;
+    }
+
+    .left {
+        position: static;
+        margin-bottom: 2rem;
+    }
+
+    .plate {
+        padding: 1rem;
+    }
+
+    .year {
+        font-size: 3rem;
+        bottom: .2rem;
+        right: .5rem;
+    }
+
+    .description {
+        max-width: 70%;
+    }
+
+    .image {
+        bottom: .5rem;
+        right: .5rem;
+    }
 }

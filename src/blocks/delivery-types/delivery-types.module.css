@@ -1,7 +1,8 @@
 .wrapper {
-    max-width: 86%;
+    width: 86%;
     margin: 0 auto;
     color: #000; /* добавлено */
+    max-width: 1200px;
 }
 
 .title {
@@ -31,9 +32,9 @@
     transition: transform 0.5s;
 }
 
-.card:hover {
-    transform: scale(1.1);
-}
+/*.card:hover {*/
+/*    transform: scale(1.1);*/
+/*}*/
 
 /* Увеличенная на 20% */
 .large {
@@ -79,6 +80,7 @@
 }
 
 .button {
+    all: unset;
     position: absolute;
     bottom: 1rem;
     right: 1rem;
@@ -98,4 +100,33 @@
     .row {
         gap: 1rem;
     }
+
+    .cardTitle {
+        font-size: 1rem;
+    }
+
+    .label {
+        top: 1.2rem;
+        right: 0.2rem;
+    }
+
+    .wrapper {
+        width: 100%;
+    }
+}
+
+.bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px);
+    opacity: 0.6;
+    z-index: 0;
+    transition: transform 0.5s ease;
+    transform: scale(1); /* базовое */
+    transform-origin: center;
+}
+.card:hover .bg {
+    transform: scale(1.2); /* эффект приближения фона */
 }

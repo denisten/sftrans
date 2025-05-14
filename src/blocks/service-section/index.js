@@ -1,5 +1,12 @@
+'use client';
+
 import Image from 'next/image';
 import styles from './service-section.module.css';
+import { motion } from 'framer-motion';
+import { useClosestCardId } from '@/hooks/use-closest-card-id';
+import { useIsMobile } from '@/hooks/use-is-mobile';
+import ServiceCard from '@/components/service-card';
+import ServiceCardMobile from '@/components/service-card/service-card-mobile';
 
 const services = [
   {
@@ -39,7 +46,7 @@ const services = [
     title: 'Платежи в КНР',
     description:
       'Мы обеспечиваем надёжные и безопасные международные расчёты. Аккредитованный участник системы China Pay.',
-    icon: '/icons/chinapay.svg',
+    icon: '/icons/china-pay-service.svg',
     bg: '#00009D',
   },
   {
@@ -69,6 +76,9 @@ const services = [
 ];
 
 export default function ServicesSection() {
+  const activeId = useClosestCardId();
+  const isMobile = useIsMobile();
+
   return (
     <section className={styles.servicesSection} id="services">
       <div className={styles.header}>
@@ -79,58 +89,35 @@ export default function ServicesSection() {
         <span className={`${styles.line} ${styles.lineRight}`} />
       </div>
 
-      <div className={styles.timeline}>
-        {services.map((svc, i) => {
-          const isLeft = i % 2 === 0;
-          return (
-            <div
-              key={svc.id}
-              className={`${styles.timelineItem} ${
-                isLeft ? styles.left : styles.right
-              }`}
-            >
-              <div
-                style={{ background: svc.bg }}
-                className={`${styles.contentBox} ${
-                  isLeft ? styles.leftBox : styles.rightBox
-                }`}
-              >
-                {isLeft ? (
-                  <>
-                    <div className={styles.text}>
-                      <h3 className={styles.title}>{svc.title}</h3>
-                      <p className={styles.desc}>{svc.description}</p>
-                    </div>
-                    <div className={styles.iconBox}>
-                      <Image
-                        src={svc.icon}
-                        alt={svc.title}
-                        width={48}
-                        height={48}
-                      />
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <div className={styles.iconBox}>
-                      <Image
-                        src={svc.icon}
-                        alt={svc.title}
-                        width={48}
-                        height={48}
-                      />
-                    </div>
-                    <div className={styles.text}>
-                      <h3 className={styles.title}>{svc.title}</h3>
-                      <p className={styles.desc}>{svc.description}</p>
-                    </div>
-                  </>
-                )}
-              </div>
-            </div>
-          );
-        })}
-      </div>
+      {isMobile ? (
+        <div className={styles.timeline}>
+          {services.map(svc => (
+            <ServiceCardMobile svc={svc} key={svc.id} />
+          ))}
+        </div>
+      ) : (
+        <div className={styles.timeline}>
+          {services.map((svc, i) => {
+            const isActive = String(svc.id) === activeId;
+            const activeIndex = services.findIndex(
+              s => String(s.id) === activeId
+            );
+            const isBefore = i === activeIndex - 1;
+            const isAfter = i === activeIndex + 1;
+
+            return (
+              <ServiceCard
+                key={svc.id}
+                svc={svc}
+                isBefore={isBefore}
+                isAfter={isAfter}
+                isLeft={i % 2 === 0}
+                isActive={isActive}
+              />
+            );
+          })}
+        </div>
+      )}
     </section>
   );
 }
