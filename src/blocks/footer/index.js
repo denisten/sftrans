@@ -129,7 +129,7 @@ export default function Footer() {
 
       <div className={styles.copy}>
         Московское представительство «Сейфтранс Интернэшнл Компани Лимитед» ©
-        2022 г.
+        2025 г.
       </div>
     </footer>
   );
