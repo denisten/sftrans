@@ -66,7 +66,7 @@ const services = [
     title: 'Складские услуги',
     description:
       'Осуществляем полный контроль за сохранностью и учётом продукции. Надёжное хранение товаров любой сложности.',
-    icon: '/icons/warehouse.svg',
+    icon: '/icons/warehouse-black.svg',
     bg: '#0000FF',
   },
 ];
