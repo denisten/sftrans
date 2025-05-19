@@ -1,0 +1,23 @@
+# Ненужные папки
+node_modules
+npm-debug.log*
+yarn-error.log*
+.vscode/
+.idea/
+
+# Системные и временные файлы
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Git-репозиторий
+.git
+.gitignore
+
+# Docker-файлы и конфиги, которые не нужны в образе
+Dockerfile*
+docker-compose*.yml
+
+# Переменные окружения
+.env
