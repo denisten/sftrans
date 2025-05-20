@@ -18,7 +18,7 @@ ENV NODE_ENV=production
 
 # Берём только production-зависимости
 COPY package*.json ./
-RUN npm ci --production
+RUN npm ci --omit=dev
 
 # Копируем артефакты сборки
 COPY --from=builder /app/.next ./.next
