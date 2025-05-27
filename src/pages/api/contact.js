@@ -29,7 +29,7 @@ export default async function handler(req, res) {
     `<b>Имя:</b> ${name}\n` +
     `<b>Телефон:</b> ${phone}\n` +
     `<b>Email:</b> ${email}\n` +
-    `<b>Сообщение:</b>\n${message}\n`;
+    `<b>Сообщение:</b>${message}\n`;
 
   try {
     const tgRes = await fetch(
