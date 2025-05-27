@@ -25,12 +25,11 @@ export default async function handler(req, res) {
 
   // Формируем текст сообщения для Telegram (HTML-разметка)
   const text =
-    `<b>Новая заявка с сайта</b>\n` +
+    `<b>Новая заявка с sftrans</b>\n` +
     `<b>Имя:</b> ${name}\n` +
     `<b>Телефон:</b> ${phone}\n` +
     `<b>Email:</b> ${email}\n` +
-    `<b>Сообщение:</b>\n${message}\n` +
-    `<b>Отправлено с:</b> ${referer}\n`;
+    `<b>Сообщение:</b>\n${message}\n`;
 
   try {
     const tgRes = await fetch(
