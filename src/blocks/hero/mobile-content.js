@@ -25,8 +25,11 @@ export default function MobileContent({ item }) {
       />
 
       <div className={style.mobileContainer}>
-        <span>Полный цикл логистики из Китая в Россию под ключ</span>
-        <span>Собственный автопарк. ChinaPay. Параллельный импорт.</span>
+        <p className={style.mobileTitle}>Полный цикл логистики</p>
+        <p className={style.mobileTitle}>под ключ</p>
+        <p className={style.mobileSubtitle}>
+          с <span className={style.year}>1997</span> года
+        </p>
       </div>
     </div>
   );
