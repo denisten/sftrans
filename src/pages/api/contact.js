@@ -15,6 +15,7 @@ export default async function handler(req, res) {
 
   const botToken = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = process.env.TELEGRAM_CHAT_ID;
+  const referer = req.headers.referer || 'Неизвестен';
 
   if (!botToken || !chatId) {
     console.error('Telegram config missing');
@@ -28,7 +29,8 @@ export default async function handler(req, res) {
     `<b>Имя:</b> ${name}\n` +
     `<b>Телефон:</b> ${phone}\n` +
     `<b>Email:</b> ${email}\n` +
-    `<b>Сообщение:</b>\n${message}`;
+    `<b>Сообщение:</b>\n${message}\n` +
+    `<b>Отправлено с:</b> ${referer}\n`;
 
   try {
     const tgRes = await fetch(
