@@ -30,7 +30,7 @@ export default function Footer() {
           <address className={styles.address}>
             г. Москва, ул. Ленинский пр-т, д. 113/1, оф. E310
             <br />
-            (10:00 – 19:00)
+            (09:00 – 18:00)
           </address>
         </div>
 

@@ -30,7 +30,7 @@ export const metadata = {
   title: 'Safetrans',
   description: 'Logistics company',
   icons: {
-    icon: '/logo.png',
+    icon: '/favicon.png',
   },
 };
 
