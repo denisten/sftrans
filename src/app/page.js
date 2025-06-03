@@ -14,6 +14,7 @@ import Map from '@/blocks/map';
 import Footer from '@/blocks/footer';
 import Partners from '@/blocks/partners';
 import AdvantagesMobile from '@/blocks/advantages/advantages-mobile';
+import BusinessTourBlock from '@/blocks/business-tour';
 
 export default function Home() {
   return (
@@ -21,11 +22,12 @@ export default function Home() {
       <Header />
       <Hero />
       <Form />
-      <TimetransitBrand />
       <ServicesSection />
       <DeliveryTypes />
       <Features />
       <SectionAdvantages />
+      <BusinessTourBlock />
+      <TimetransitBrand />
       {/*<FreeDeclaration />*/}
       <OurClients />
       {/*<Partners />*/}
