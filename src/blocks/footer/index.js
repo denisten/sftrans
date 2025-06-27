@@ -81,8 +81,8 @@ export default function Footer() {
             Узнать цену
           </button>
           <div className={styles.emails}>
+            <Link href="mailto:info.st@sftrans.ru">info.st@sftrans.ru</Link>
             <Link href="mailto:info@timetransit.ru">info@timetransit.ru</Link>
-            <Link href="mailto:info@sftrans.ru">info@sftrans.ru</Link>
           </div>
           <a href="tel:+74959692990" className={styles.phone}>
             +7 495 969 29 90

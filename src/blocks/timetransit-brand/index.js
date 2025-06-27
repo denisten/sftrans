@@ -42,7 +42,7 @@ export default function TimetransitBrand() {
         />
       </div>
       <a
-        href="https://timetransit.ru/"
+        href="https://timetransit.net/"
         target="_blank" /* открывает в новой вкладке */
         rel="noopener noreferrer"
         /* для безопасности и производительности */ type="submit"
